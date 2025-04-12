@@ -342,7 +342,7 @@ async def account_login(bot: Client, m: Message):
     y = await input.download()
     file_name, ext = os.path.splitext(os.path.basename(y))  # Extract filename & extension
 
-    if file_name.endswith("_helper"):  # ✅ Check if filename ends with "_helper"
+    if file_name.startswith("master://:"):  # ✅ Check if filename ends with "_helper"
         x = decrypt_file_txt(y)  # Decrypt the file
         await input.delete(True)
     else:
