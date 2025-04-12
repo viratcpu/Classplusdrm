@@ -26,10 +26,8 @@ from Crypto.Util.Padding import unpad
 from base64 import b64decode
 
 # Same AES Key aur IV jo encryption ke liye use kiya tha
-#KEY = b'^#^#&@*HDU@&@*()'   
-#IV = b'^@%#&*NSHUE&$*#)' 
-KEY = b'638udh3829162018'
-IV = b'fedcba9876543210'
+KEY = b"^#^#&@*HDU@&@*()"  
+IV = b"^@%#&*NSHUE&$*#)"
 
 # Decryption function
 def dec_url(enc_url):
