@@ -26,19 +26,21 @@ from Crypto.Util.Padding import unpad
 from base64 import b64decode
 
 # Same AES Key aur IV jo encryption ke liye use kiya tha
-KEY = b'^#^#&@*HDU@&@*()'   
-IV = b'^@%#&*NSHUE&$*#)'   
+#KEY = b'^#^#&@*HDU@&@*()'   
+#IV = b'^@%#&*NSHUE&$*#)' 
+KEY = b'638udh3829162018'
+IV = b'fedcba9876543210'
 
 # Decryption function
 def dec_url(enc_url):
-    enc_url = enc_url.replace("helper://", "")  # "helper://" prefix hatao
+    enc_url = enc_url.replace("master://:", "")  # "helper://" prefix hatao
     cipher = AES.new(KEY, AES.MODE_CBC, IV)
     decrypted = unpad(cipher.decrypt(b64decode(enc_url)), AES.block_size)
     return decrypted.decode('utf-8')
 
 # Function to split name & Encrypted URL properly
 def split_name_enc_url(line):
-    match = re.search(r"(helper://\S+)", line)  # Find `helper://` ke baad ka encrypted URL
+    match = re.search(r"(master://:\S+)", line)  # Find `helper://` ke baad ka encrypted URL
     if match:
         name = line[:match.start()].strip().rstrip(":")  # Encrypted URL se pehle ka text
         enc_url = match.group(1).strip()  # Sirf Encrypted URL
