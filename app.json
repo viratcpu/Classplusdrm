@@ -25,6 +25,11 @@
             "description": "Enter your bot token",
             "value": "",
             "required": true
+        },
+        "token_cp":{
+            "description": "Enter your classplus token",
+            "value": "",
+            "required": true
         }
     },
     "addons": [],
