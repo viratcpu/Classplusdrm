@@ -45,7 +45,7 @@ photo = "https://tinypic.host/image/Screenshot-2025-03-19-06-40-21-30.3gKoOw"
 
 api_url = "http://master-api-v3.vercel.app/"
 api_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNzkxOTMzNDE5NSIsInRnX3VzZXJuYW1lIjoi4p61IFtvZmZsaW5lXSIsImlhdCI6MTczODY5MjA3N30.SXzZ1MZcvMp5sGESj0hBKSghhxJ3k1GTWoBUbivUe1I"
-#token_cp = "eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIxMzgyNjMyLCJvcmdJZCI6NTU3MywidHlwZSI6MSwibW9iaWxlIjoiOTE4NjE4MDg2MDg5IiwibmFtZSI6Ik5pbGVzaCIsImVtYWlsIjoicHJpbmNlY2hhcmFuMjUwNEBnbWFpbC5jb20iLCJpc0ludGVybmF0aW9uYWwiOjAsImRlZmF1bHRMYW5ndWFnZSI6IkVOIiwiY291bnRyeUNvZGUiOiJJTiIsImNvdW50cnlJU08iOiI5MSIsInRpbWV6b25lIjoiR01UKzU6MzAiLCJpc0RpeSI6dHJ1ZSwib3JnQ29kZSI6ImFjbWVhIiwiaXNEaXlTdWJhZG1pbiI6MCwiZmluZ2VycHJpbnRJZCI6IjdhMzQyMGJlODRkMTQwMjhhMzdmZTZhOWU1M2UwOWQxIiwiaWF0IjoxNzQ0NTAyNzgyLCJleHAiOjE3NDUxMDc1ODJ9.ceyE7TC3QLx5Cmav0iHVfuyAvtYQO1gTaHn22FyOHGNBVVALYEXLEaMaAnXOWQNR"
+token_cp = 'eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIxMzgyNjMyLCJvcmdJZCI6NTU3MywidHlwZSI6MSwibW9iaWxlIjoiOTE4NjE4MDg2MDg5IiwibmFtZSI6Ik5pbGVzaCIsImVtYWlsIjoicHJpbmNlY2hhcmFuMjUwNEBnbWFpbC5jb20iLCJpc0ludGVybmF0aW9uYWwiOjAsImRlZmF1bHRMYW5ndWFnZSI6IkVOIiwiY291bnRyeUNvZGUiOiJJTiIsImNvdW50cnlJU08iOiI5MSIsInRpbWV6b25lIjoiR01UKzU6MzAiLCJpc0RpeSI6dHJ1ZSwib3JnQ29kZSI6ImFjbWVhIiwiaXNEaXlTdWJhZG1pbiI6MCwiZmluZ2VycHJpbnRJZCI6IjljMzkwMTVkOWIyNjRlNWFiMWZkM2M3MjcxNTZjZGQzIiwiaWF0IjoxNzQ0NTE5NzExLCJleHAiOjE3NDUxMjQ1MTF9.ZTB77NTdTYHTR4ub4zFzxgSMdYw1APXbeQC7VflRMbNWkxjHYmxD1v1m_yyTKSJ9'
 
 import random
 
@@ -522,13 +522,13 @@ async def account_login(bot: Client, m: Message):
                 url = url.split("bcov_auth")[0]+bcov
               
             elif "tencdn.classplusapp" in url:
-                headers = {'Host': 'api.classplusapp.com', 'x-access-token': f'{token_cp}', 'user-agent': 'Mobile-Android', 'app-version': '1.4.37.1', 'api-version': '18', 'device-id': '5d0d17ac8b3c9f51', 'device-details': '2848b866799971ca_2848b8667a33216c_SDK-30', 'accept-encoding': 'gzip'}
+                headers = {'Host': 'api.classplusapp.com', 'x-access-token': f'eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIxMzgyNjMyLCJvcmdJZCI6NTU3MywidHlwZSI6MSwibW9iaWxlIjoiOTE4NjE4MDg2MDg5IiwibmFtZSI6Ik5pbGVzaCIsImVtYWlsIjoicHJpbmNlY2hhcmFuMjUwNEBnbWFpbC5jb20iLCJpc0ludGVybmF0aW9uYWwiOjAsImRlZmF1bHRMYW5ndWFnZSI6IkVOIiwiY291bnRyeUNvZGUiOiJJTiIsImNvdW50cnlJU08iOiI5MSIsInRpbWV6b25lIjoiR01UKzU6MzAiLCJpc0RpeSI6dHJ1ZSwib3JnQ29kZSI6ImFjbWVhIiwiaXNEaXlTdWJhZG1pbiI6MCwiZmluZ2VycHJpbnRJZCI6IjljMzkwMTVkOWIyNjRlNWFiMWZkM2M3MjcxNTZjZGQzIiwiaWF0IjoxNzQ0NTE5NzExLCJleHAiOjE3NDUxMjQ1MTF9.ZTB77NTdTYHTR4ub4zFzxgSMdYw1APXbeQC7VflRMbNWkxjHYmxD1v1m_yyTKSJ9', 'user-agent': 'Mobile-Android', 'app-version': '1.4.37.1', 'api-version': '18', 'device-id': '5d0d17ac8b3c9f51', 'device-details': '2848b866799971ca_2848b8667a33216c_SDK-30', 'accept-encoding': 'gzip'}
                 params = (('url', f'{url}'))
                 response = requests.get('https://api.classplusapp.com/cams/uploader/video/jw-signed-url', headers=headers, params=params)
                 url = response.json()['url']  
 
             elif 'videos.classplusapp' in url:
-                url = requests.get(f'https://api.classplusapp.com/cams/uploader/video/jw-signed-url?url={url}', headers={'x-access-token': f'{token_cp}'}).json()['url']
+                url = requests.get(f'https://api.classplusapp.com/cams/uploader/video/jw-signed-url?url={url}', headers={'x-access-token': f'eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIxMzgyNjMyLCJvcmdJZCI6NTU3MywidHlwZSI6MSwibW9iaWxlIjoiOTE4NjE4MDg2MDg5IiwibmFtZSI6Ik5pbGVzaCIsImVtYWlsIjoicHJpbmNlY2hhcmFuMjUwNEBnbWFpbC5jb20iLCJpc0ludGVybmF0aW9uYWwiOjAsImRlZmF1bHRMYW5ndWFnZSI6IkVOIiwiY291bnRyeUNvZGUiOiJJTiIsImNvdW50cnlJU08iOiI5MSIsInRpbWV6b25lIjoiR01UKzU6MzAiLCJpc0RpeSI6dHJ1ZSwib3JnQ29kZSI6ImFjbWVhIiwiaXNEaXlTdWJhZG1pbiI6MCwiZmluZ2VycHJpbnRJZCI6IjljMzkwMTVkOWIyNjRlNWFiMWZkM2M3MjcxNTZjZGQzIiwiaWF0IjoxNzQ0NTE5NzExLCJleHAiOjE3NDUxMjQ1MTF9.ZTB77NTdTYHTR4ub4zFzxgSMdYw1APXbeQC7VflRMbNWkxjHYmxD1v1m_yyTKSJ9'}).json()['url']
             
             elif 'media-cdn.classplusapp.com' in url or 'media-cdn-alisg.classplusapp.com' in url or 'media-cdn-a.classplusapp.com' in url: 
                 headers = { 'x-access-token': f'{token_cp}',"X-CDN-Tag": "empty"}
