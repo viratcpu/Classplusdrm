@@ -87,7 +87,7 @@ async def start_command(bot: Client, message: Message):
     caption = ("""
 <blockquote>🌟 <b>Welcome Buddy....! ☠️!</b> 🌟</blockquote><br><br>
 
-/help <b>to know about all the commonds</b> 📄 <br><br>
+/help <b>to know about all the commonds</b> 📄 \n<br><br>
 <b>Contact Me</b> [🅱🅴🅰🆂🆃 👑](tg://user?id=7517045929)<b>to Get The Subscription</b> 🎫<br>
 """)
     await asyncio.sleep(1)
@@ -338,19 +338,19 @@ async def remove_all_channels(client, message: Message):
     write_channels_data([])
     await message.reply_text("✅ **All Channels/Groups have been removed successfully.**")
 
-@bot.on_message(filters.command("guide"))
+@bot.on_message(filters.command("help"))
 async def guide_handler(client: Client, message: Message):
     guide_text = (
       "🌟 **Welcome to the Bot Guide** 🌟\n\n"
-      "/start : To Check Bot Is Alive Or Not\n"
-      "/drm : To Upload .txt File\n"
-      "/stop : To Stop The Current Operation\n"
-      "/adduser : To Add New User ex: /adduser 7645123456 23/08/2025\n"
-      "/removeuser : To Remove User\n"
-      "/add_channel : To add New Channel\n"
-      "/remove_channel : To remove all the channels\n"
-      "/myplan : To check Your Active Membership\n\n"
-      "Contact Me For Premium : [🅱🅴🅰🆂🆃 👑](tg://user?id=7517045929) "
+      "/start : <b>To Check Bot Is Alive Or Not\n</b>"
+      "/drm : <b>To Upload .txt File\n</b>"
+      "/stop : <b>To Stop The Current Operation\n</b>"
+      "/adduser : <b>To Add New User</b> ex: /adduser 7645123456 23/08/2025\n"
+      "/removeuser : <b>To Remove User\n</b>"
+      "/add_channel : <b>To add New Channel\n</b>"
+      "/remove_channel : <b>To remove all the channels\n</b>"
+      "/myplan : <b>To check Your Active Membership\n\n</b>"
+      "<b>Premium</b> : [🅱🅴🅰🆂🆃 👑](tg://user?id=7517045929) "
     )
     await message.reply_text(guide_text)
 
@@ -575,8 +575,9 @@ async def account_login(bot: Client, m: Message):
                       f"🎥VIDEO ID : {str(count).zfill(3)}\n"
                       f"╰━━━━━━━━━━━╯\n\n"
                       f"📄 **Title** : `{name1}.mkv`\n\n"
-                      f"<blockquote>📗 **Batch Name** : {b_name}</blockquote>\n\n"
-                      f"📥 **Extracted By** : {MR}\n\n"
+                      f"<blockquote>📗 **Batch Name** : `{b_name}`</blockquote>\n\n"
+                      f"**Resolution:** `{res}`📘\n\n"
+                      f"📥 **Extracted By** : `{MR}`\n\n"
                      )                
                 
                cc1 = (             
@@ -584,8 +585,9 @@ async def account_login(bot: Client, m: Message):
                      f"📁FILE ID : {str(count).zfill(3)}\n"
                      f"╰━━━━━━━━━━━╯\n\n"
                      f"📄 **Title** : `{name1}.pdf`\n\n"
-                     f"<blockquote>📗 **Batch Name** : {b_name}</blockquote>\n\n"
-                     f"📥 **Extracted By** : {MR}\n\n" 
+                     f"<blockquote>📗 **Batch Name** : `{b_name}`</blockquote>\n\n"
+                     f"**Resolution:** `{res}`📘\n\n"
+                     f"📥 **Extracted By** : `{MR}`\n\n" 
                     )
 
                cc2 = (
@@ -593,8 +595,9 @@ async def account_login(bot: Client, m: Message):
                       f"🎥VIDEO ID : {str(count).zfill(3)}\n"
                       f"╰━━━━━━━━━━━╯\n\n"
                       f"📄 **Title** : `{name1}.jpg`\n\n"
-                      f"<blockquote>📗 **Batch Name** : {b_name}</blockquote>\n\n"
-                      f"📥 **Extracted By** : {MR}\n\n"
+                      f"<blockquote>📗 **Batch Name** : `{b_name}`</blockquote>\n\n"
+                      f"**Resolution:** `{res}`📘\n\n"
+                      f"📥 **Extracted By** : `{MR}`\n\n"
                       )                
                
                ccyt = (             
@@ -602,8 +605,9 @@ async def account_login(bot: Client, m: Message):
                      f"🎥VIDEO ID : {str(count).zfill(3)}\n"
                      f"╰━━━━━━━━━━━╯\n\n"
                      f"📄 **Title** : `{name1}.mkv`\n\n"
-                     f"<blockquote>📗 **Batch Name** : {b_name}</blockquote>\n\n"
-                     f"📥 **Extracted By** : {MR}\n\n" 
+                     f"<blockquote>📗 **Batch Name** : `{b_name}`</blockquote>\n\n"
+                     f"**Resolution:** `{res}`📘\n\n" 
+                     f"📥 **Extracted By** : `{MR}`\n\n"
                      )
 
                 #cc = f'**╭── ⋆⋅☆⋅⋆ ──╮**\n✦ **{str(count).zfill(3)}** ✦\n**╰── ⋆⋅☆⋅⋆ ──╯**\n\n🎭 **Title:** `{name1} 😎 .mkv`\n🖥️ **Resolution:** [{res}]\n\n📘 **Course:** `{b_name}`\n\n🚀 **Extracted By:** `{MR}`'
