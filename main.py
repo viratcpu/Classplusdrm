@@ -28,7 +28,7 @@ from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
 from base64 import b64encode, b64decode
 from helper import *
-from config import API_ID, API_HASH, BOT_TOKEN, token_cp
+from config import API_ID, API_HASH, BOT_TOKEN
 
 # watermark_text = ""
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -87,7 +87,7 @@ async def start_command(bot: Client, message: Message):
     caption = ("""
 <blockquote>🌟 <b>Welcome Buddy....! ☠️!</b> 🌟</blockquote><br><br>
 
-/help <b>to know about all the commonds</b> 📄 <br><br>
+/help <b>to know about all the commonds\n</b> 📄 <br><br>
 <b>Contact Me</b> [🅱🅴🅰🆂🆃 👑](tg://user?id=7517045929)<b>to Get The Subscription</b> 🎫<br>
 """)
     await asyncio.sleep(1)
@@ -342,15 +342,15 @@ async def remove_all_channels(client, message: Message):
 async def guide_handler(client: Client, message: Message):
     guide_text = (
       "🌟 **Welcome to the Bot Guide** 🌟\n\n"
-      "/start : To Check Bot Is Alive Or Not\n"
-      "/drm : To Upload .txt File\n"
-      "/stop : To Stop The Current Operation\n"
-      "/adduser : To Add New User ex: /adduser 7645123456 23/08/2025\n"
-      "/removeuser : To Remove User\n"
-      "/add_channel : To add New Channel\n"
-      "/remove_channel : To remove all the channels\n"
-      "/myplan : To check Your Active Membership\n\n"
-      "Contact Me For Premium : [🅱🅴🅰🆂🆃 👑](tg://user?id=7517045929) "
+      "/start : <b>To Check Bot Is Alive Or Not</b>\n"
+      "/drm : <b>To Upload .txt File\n</b>"
+      "/stop : <b>To Stop The Current Operation</b>\n"
+      "/adduser : <b>To Add New User ex: /adduser 7645123456 23/08/2025</b>\n"
+      "/removeuser : <b>To Remove User</b>\n"
+      "/add_channel : <b>To add New Channel</b>\n"
+      "/remove_channel : <b>To remove all the channels</b>\n"
+      "/myplan : <b>To check Your Active Membership</b>\n\n"
+      "<b><blockquote>Premium</blockquote></b>: [🅱🅴🅰🆂🆃 👑](tg://user?id=7517045929) "
     )
     await message.reply_text(guide_text)
 
