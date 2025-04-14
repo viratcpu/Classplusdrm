@@ -644,7 +644,7 @@ async def account_login(bot: Client, m: Message):
                       f"**Resolution:** `{res}`📘\n\n"
                       f"📥 **Extracted By** : {MR}\n\n"
                       )                
-               #cczip = f'——— ✨ [{str(count).zfill(3)}]({link0}) ✨ ———\n\n📁𝐓𝐢𝐭𝐥𝐞 » `{name1}` .zip\n\n<pre><code>📚 Course : {b_name}</code></pre>\n\n🌟𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 » {CR}\n'
+               cczip = f'**╭── ⋆⋅☆⋅⋆ ──╮**\n✦ **{str(count).zfill(3)}** ✦\n**╰── ⋆⋅☆⋅⋆ ──╯**\n\n🎭 **Title:** `{name1} 😎 .zip`\n\n📘 **Course:** `{b_name}`\n\n🚀 **Extracted By:** {MR}'
                ccyt = (             
                      f"╭━━━━━━━━━━━╮\n"
                      f"🎥VIDEO ID : {str(count).zfill(3)}\n"
@@ -657,7 +657,7 @@ async def account_login(bot: Client, m: Message):
 
               
                 #cc = f'**╭── ⋆⋅☆⋅⋆ ──╮**\n✦ **{str(count).zfill(3)}** ✦\n**╰── ⋆⋅☆⋅⋆ ──╯**\n\n🎭 **Title:** `{name1} 😎 .mkv`\n🖥️ **Resolution:** [{res}]\n\n📘 **Course:** `{b_name}`\n\n🚀 **Extracted By:** `{MR}`'
-                cczip = f'**╭── ⋆⋅☆⋅⋆ ──╮**\n✦ **{str(count).zfill(3)}** ✦\n**╰── ⋆⋅☆⋅⋆ ──╯**\n\n🎭 **Title:** `{name1} 😎 .zip`\n\n📘 **Course:** `{b_name}`\n\n🚀 **Extracted By:** `{MR}`'
+                #cczip = f'**╭── ⋆⋅☆⋅⋆ ──╮**\n✦ **{str(count).zfill(3)}** ✦\n**╰── ⋆⋅☆⋅⋆ ──╯**\n\n🎭 **Title:** `{name1} 😎 .zip`\n\n📘 **Course:** `{b_name}`\n\n🚀 **Extracted By:** `{MR}`'
                 #cc2 = f'**╭── ⋆⋅☆⋅⋆ ──╮**\n✦ **{str(count).zfill(3)}** ✦\n**╰── ⋆⋅☆⋅⋆ ──╯**\n\n🎭 **Title:** `{name1} 😎 .jpg`\n\n📘 **Course:** `{b_name}`\n\n🚀 **Extracted By:** `{MR}`'
                 #ccyt = f'**╭── ⋆⋅☆⋅⋆ ──╮**\n✦ **{str(count).zfill(3)}** ✦\n**╰── ⋆⋅☆⋅⋆ ──╯**\n\n🎭 **Title:** `{name1} 😎 .mkv`\n🎬 **Video Link:** {url}\n🖥️ **Resolution:** [{res}]\n\n📘 **Course:** `{b_name}`\n\n🚀 **Extracted By:** `{MR}`'
 
