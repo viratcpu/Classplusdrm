@@ -363,8 +363,9 @@ async def restart_handler(_, m):
 async def account_login(bot: Client, m: Message):
     #if m.chat.type == "private":
     user_id = str(m.from_user.id)
+    channels = read_channels_data()
     subscription_data = read_subscription_data()
-    if not any(user[0] == user_id for user in subscription_data):
+    if not any(user[0] == user_id for user in subscription_data) or channels:
         await m.reply_text("❌ You are not a premium user. Please upgrade your subscription! 💎")
         return          
     editable = await m.reply_text("**Please Send TXT file for download**")
