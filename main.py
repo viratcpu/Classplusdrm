@@ -362,7 +362,7 @@ async def restart_handler(_, m):
 @bot.on_message(filters.command("drm")) # & filters.private)
 async def account_login(bot: Client, m: Message):
     #if m.chat.type == "private":
-    user_id = str(m.from_user.id)
+    user_id = str(m.chat.id)
     channels = read_channels_data()
     subscription_data = read_subscription_data()
     if not any(user[0] == user_id for user in subscription_data) or user_id in channels:
