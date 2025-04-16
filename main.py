@@ -72,10 +72,10 @@ image_urls = [
 ]
 # Start command handler
 @bot.on_message(filters.command(["start"]))
-async def start_command(bot: Client, message: Message):
+async def start_command(bot: Client, m: Message):
     # Send a loading message
     loading_message = await bot.send_message(
-        chat_id=message.chat.id,
+        chat_id=m.chat.id,
         text="Loading... ⏳🔄"
     )
   
@@ -265,8 +265,8 @@ async def my_plan(client, message: Message):
         await message.reply_text("**❌ You are not a premium user.**")
 # 4. /add_channel
 @bot.on_message(filters.command("add_channel"))
-async def add_channel(client, message: Message):
-    user_id = str(message.from_user.id)
+async def add_channel(client, m: Message):
+    user_id = str(m.chat.id)
     subscription_data = read_subscription_data()
 
     if not any(user[0] == user_id for user in subscription_data):
@@ -288,8 +288,8 @@ async def add_channel(client, message: Message):
 
 # 5. /remove_channels
 @bot.on_message(filters.command("remove_channel"))
-async def remove_channel(client, message: Message):
-    user_id = str(message.from_user.id)
+async def remove_channel(client, m: Message):
+    user_id = str(m.chat.id)
     subscription_data = read_subscription_data()
 
     if not any(user[0] == user_id for user in subscription_data):
@@ -310,8 +310,8 @@ async def remove_channel(client, message: Message):
 
 # Command to show all allowed channels (Admin only)
 @bot.on_message(filters.command("allowed_channel"))
-async def allowed_channels(client, message: Message):
-    user_id = message.from_user.id
+async def allowed_channels(client, m: Message):
+    user_id = str(m.chat.id)
 
     if not is_admin(user_id):
         await message.reply_text("❌ It's Only Owner Command.")
