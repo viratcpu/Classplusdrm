@@ -72,10 +72,10 @@ image_urls = [
 ]
 # Start command handler
 @bot.on_message(filters.command(["start"]))
-async def start_command(bot: Client, m: Message):
+async def start_command(bot: Client, message: Message):
     # Send a loading message
     loading_message = await bot.send_message(
-        chat_id=m.chat.id,
+        chat_id=message.chat.id,
         text="Loading... ⏳🔄"
     )
   
@@ -130,6 +130,12 @@ async def start_command(bot: Client, m: Message):
     # Delete the loading message
     await loading_message.delete()
 
+import json
+import os
+import sys
+from pyrogram import Client, filters
+from pyrogram.types import Message
+
 # File paths
 SUBSCRIPTION_FILE = "subscription_data.txt"
 CHANNELS_FILE = "channels_data.json"
@@ -141,21 +147,28 @@ YOUR_ADMIN_ID = 7517045929
 def read_subscription_data():
     if not os.path.exists(SUBSCRIPTION_FILE):
         return []
-    with open(SUBSCRIPTION_FILE, "r") as f:
+    try:
+      with open(SUBSCRIPTION_FILE, "r") as f:
         return [line.strip().split(",") for line in f.readlines()]
+    except Exception as error:
+        print(f"Error reading subscription data: {error}")
+        return []
 
 # Function to write subscription data
 def write_subscription_data(data):
+  try:
     with open(SUBSCRIPTION_FILE, "w") as f:
         for user in data:
             f.write(",".join(user) + "\n")
+  except Exception as error:
+        print(f"Error writing subscription data: {error}")
 
 def read_channels_data():
     if not os.path.exists(CHANNELS_FILE):
         return []
     try:
-        with open(CHANNELS_FILE, "r") as file:
-            return json.load(file)
+        with open(CHANNELS_FILE, "r") as f:
+            return json.load(f)
     except json.JSONDecodeError:
         print("Error: Channels data contains invalid JSON format.")
         return []
@@ -165,16 +178,16 @@ def read_channels_data():
 
 def write_channels_data(data):
     try:
-        with open(CHANNELS_FILE, "w") as file:
-            json.dump(data, file, indent=4)
+        with open(CHANNELS_FILE, "w") as f:
+            json.dump(data, f, indent=4)
     except Exception as error:
         print(f"Error writing channels data: {error}")
 
 # Admin-only decorator
 def admin_only(func):
     async def wrapper(client, message: Message):
-        if message.from_user.id != YOUR_ADMIN_ID:
-            await message.reply_text("You are not authorized to use this command.")
+        if message.from_user.id != ADMIN_ID:
+            await message.reply_text("❌ You are not authorized to use this command. Please contact the admin.")
             return
         await func(client, message)
     return wrapper
@@ -265,8 +278,8 @@ async def my_plan(client, message: Message):
         await message.reply_text("**❌ You are not a premium user.**")
 # 4. /add_channel
 @bot.on_message(filters.command("add_channel"))
-async def add_channel(client, m: Message):
-    user_id = str(m.chat.id)
+async def add_channel(client, message: Message):
+    user_id = str(message.from_user.id)
     subscription_data = read_subscription_data()
 
     if not any(user[0] == user_id for user in subscription_data):
@@ -288,8 +301,8 @@ async def add_channel(client, m: Message):
 
 # 5. /remove_channels
 @bot.on_message(filters.command("remove_channel"))
-async def remove_channel(client, m: Message):
-    user_id = str(m.chat.id)
+async def remove_channel(client, message: Message):
+    user_id = str(message.from_user.id)
     subscription_data = read_subscription_data()
 
     if not any(user[0] == user_id for user in subscription_data):
@@ -310,8 +323,8 @@ async def remove_channel(client, m: Message):
 
 # Command to show all allowed channels (Admin only)
 @bot.on_message(filters.command("allowed_channel"))
-async def allowed_channels(client, m: Message):
-    user_id = str(m.chat.id)
+async def allowed_channels(client, message: Message):
+    user_id = message.from_user.id
 
     if not is_admin(user_id):
         await message.reply_text("❌ It's Only Owner Command.")
@@ -358,16 +371,19 @@ async def restart_handler(_, m):
     await m.reply_text("🚦**STOPPED**🚦", True)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
     os.execl(sys.executable, sys.executable, *sys.argv)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 @bot.on_message(filters.command("drm")) # & filters.private)
 async def account_login(bot: Client, m: Message):
-    #if m.chat.type == "private":
-    user_id = str(m.chat.id)
-    channels = read_channels_data()
-    subscription_data = read_subscription_data()
-    if not any(user[0] == user_id for user in subscription_data) or user_id in channels:
-        await m.reply_text("❌ You are not a premium user. Please upgrade your subscription! 💎")
-        return          
+    if m.chat.type == "private":
+        user_id = str(m.from_user.id)
+        subscription_data = read_subscription_data()
+        if not any(user[0] == user_id for user in subscription_data):
+            await m.reply_text("❌ **You are not a premium user.**\nPlease upgrade your subscription! 💎")
+            return
+    else:
+        channels = read_channels_data()
+        if str(m.chat.id) not in channels:
+            await m.reply_text("❗ **You are not a premium user.**\nSubscribe now for exclusive access! 🚀")
+            return          
     editable = await m.reply_text("**Please Send TXT file for download**")
     input: Message = await bot.listen(editable.chat.id)
     y = await input.download()
