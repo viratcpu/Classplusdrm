@@ -143,6 +143,9 @@ CHANNELS_FILE = "channels_data.json"
 # Admin ID
 YOUR_ADMIN_ID = 7517045929
 
+def is_admin(user_id):
+    return user_id == YOUR_ADMIN_ID
+
 # Function to read subscription data
 def read_subscription_data():
     if not os.path.exists(SUBSCRIPTION_FILE):
