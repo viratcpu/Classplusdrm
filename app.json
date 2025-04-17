@@ -1,14 +1,14 @@
 {
-    "name": "Drm Uploader By 🅱🅴🅰🆂🆃 👑",
+    "name": "Drm Uploader By 𝕭𝖍𝖆𝖗𝖆𝖙 👑",
     "description": "DRM Uploader",
-    "logo": "https://tinypic.host/image/Screenshot-2025-03-19-06-40-21-30.3gKoOw",
+    "logo": "https://tinypic.host/images/2023/06/21/_DSC1783-KRUPNYI-RAZMER.jpeg",
     "keywords": [
         "text-video",
         "video-extract",
         "pyrogram"
     ],
     "repository": "https://github.com/Chiru63019/Classplusdrm",
-    "success_url": "https://telegram.me/skillwithchiru",
+    "success_url": "https://telegram.me/bharat_chhimpa",
     "stack": "container",
     "env": {
         "API_ID": {
