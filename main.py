@@ -384,7 +384,7 @@ async def account_login(bot: Client, m: Message):
     #if m.chat.type == "private":
         #user_id = str(m.from_user.id)
         #subscription_data = read_subscription_data()
-    if not any(user[0] == user_id for user in subscription_data) or user not in channels:
+    if not any(user[0] == user_id for user in subscription_data) and user not in channels:
             await m.reply_text("❌ **You are not a premium user.**\nPlease upgrade your subscription! 💎")
             return
     #channels = read_channels_data()#added
